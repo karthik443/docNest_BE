@@ -1,0 +1,15 @@
+{
+
+    "PORT":9000,
+  
+    "front-endURL":" http://localhost:36189/",
+   
+    
+    "dbURL":"mongodb://karthik:Karthik%40123@127.0.0.1:27017/projectRacha?authSource=poc",
+    "JWT_SECRET_KEY":"RachaProjectRAHH",
+     "geminiApi_KEY":"AIzaSyALWzF_lF0842pB9BOT6t7Zk1OX7OrC95E"
+
+
+
+}
+
