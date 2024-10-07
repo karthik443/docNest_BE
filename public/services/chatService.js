@@ -21,7 +21,7 @@ export default function initializeSocketIO(server) {
         // Listen for 'chatMessage' events from the client
         socket.on('chatMessage', (data) => {
             const { userId,userName, message, recipientId } = data;
-            console.log(`Message from ${userId} to ${recipientId}: ${message}`);
+   
             
             // Find the recipient's socket using the recipientId
             const recipientSocketId = users.get(recipientId);
@@ -31,6 +31,8 @@ export default function initializeSocketIO(server) {
                     sentBy:userName,
                     message,
                     time: new Date().toLocaleTimeString(),
+                    sentById:userId,
+                    recipientId:recipientId
                 });
             } else {
                 console.log('Recipient is not connected');
@@ -42,6 +44,8 @@ export default function initializeSocketIO(server) {
                     message: message,
                     type: 'sent', // Indicates this is a sent message for the sender
                     time: new Date().toLocaleTimeString(),
+                    sentById:userId,
+                    recipientId:recipientId
                 });
             }
         });
